@@ -1,18 +1,14 @@
 import React from "react";
 import Square from "./Square";
 
-export const Board = (arr, onClick) => {
+const Board = ({ squares, onClick }) => {
   return (
     <div className="board">
-      {arr.map((val, i) => (
-        <Square
-          key={i}
-          value={val}
-          onClick={() => {
-            onClick[i];
-          }}
-        />
+      {squares[0].map((square, i) => (
+        <Square key={i} value={square} onClick={() => onClick(i)} />
       ))}
     </div>
   );
 };
+
+export default Board;
