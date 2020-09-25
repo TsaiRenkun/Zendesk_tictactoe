@@ -23,6 +23,9 @@ Create folder and componets required
 - [x] Board
 - [x] Game
 
+Phase 2
+- [x] Square code 
+- [x] board code
 
 ## Challenges
 
