@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Board from './Board';
+import PlayerForm from './layout/playerForm.js';
 import { calculateWinner } from '../helper';
+import playerForm from './layout/playerForm.js';
 
 const Game = () => {
 
@@ -23,9 +25,11 @@ const Game = () => {
         setCount(boardPoint.length);
         setTurn(!turn);
     }
+
+
     return (
         <div className = "game">
-            <Board squares={board[count]} onClick={onClick} />
+            {players ? <playerForm players={players}/> : <Board squares={board[count]} onClick={onClick} />}
         </div>
     )
 }
