@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import Board from './Board';
-import PlayerForm from './layout/playerForm.js';
 import { calculateWinner } from '../helper';
-import playerForm from './layout/playerForm.js';
+import PlayerForm from './layout/PlayerForm.js';
 
 const Game = () => {
 
     const [board, setBoard] = useState([Array(9).fill(null)])
     const [count, setCount] = useState(0)
     const [turn, setTurn] = useState(true)
-    const [players, setPlayers] = useState([Array(2).fill(null)])
+    const [players, setPlayers] = useState([])
     const winner = calculateWinner(board[count])
     const xo = turn ? "X" : "O";
 
@@ -26,10 +25,15 @@ const Game = () => {
         setTurn(!turn);
     }
 
+    const setPlayer = (name1, name2) => {
+        setPlayers([...players, name1,name2])
+        // setPlayers([...players, name2])
+    }
+
 
     return (
         <div className = "game">
-            {players ? <playerForm players={players}/> : <Board squares={board[count]} onClick={onClick} />}
+            {players ? <PlayerForm setPlayer={setPlayer}/> : <Board squares={board[count]} onClick={onClick} />}
         </div>
     )
 }
