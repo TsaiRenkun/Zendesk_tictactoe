@@ -1,27 +1,21 @@
 import React, { useState } from "react";
-import M from 'materialize-css/dist/js/materialize'
+import M from "materialize-css/dist/js/materialize";
 
 const PlayerForm = ({ setPlayer }) => {
+  const [playerOne, setPlayerOne] = useState("");
+  const [playerTwo, setPlayerTwo] = useState("");
 
-    const [playerOne, setPlayerOne] = useState('')
-    const [playerTwo, setPlayerTwo] = useState('')
-
-    const onSubmit = () => {
-        if(playerOne === '' || playerTwo === ''){
-            M.toast({html: "Please enter your player names"})
-        }
-        else {
-        console.log(playerOne)
-        console.log(playerTwo)
-        
-        setPlayer(playerOne, playerTwo)
-        }
+  const onSubmit = () => {
+    if (playerOne === "" || playerTwo === "") {
+      M.toast({ html: "Please enter your player names" });
+    } else {
+      setPlayer(playerOne, playerTwo);
     }
-
+  };
 
   return (
     <div>
-      <div className="row">
+      <div className="row center">
         <form className="col s12">
           <div className="row">
             <div className="input-field col s6">
@@ -47,7 +41,7 @@ const PlayerForm = ({ setPlayer }) => {
             className="btn waves-effect waves-light blue"
             type="submit"
             name="action"
-            onClick = {onSubmit}
+            onClick={onSubmit}
           >
             Submit
             <i className="material-icons right">send</i>
