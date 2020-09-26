@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Fragment ,useEffect} from 'react';
 import Game from './components/Game'
+import NavBar from './components/layout/navBar'
+import 'materialize-css/dist/css/materialize.min.css'
+import M from 'materialize-css/dist/js/materialize.min.js'
 import './App.css';
 
 function App() {
+  useEffect(()=>M.AutoInit())
   return (
-    <div>
-      <h1>Hello from react</h1>
+    <Fragment>
+      <NavBar/>
       <Game/>
-    </div>
+    </Fragment>
   );
 }
 

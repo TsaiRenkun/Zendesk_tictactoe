@@ -3,8 +3,8 @@
 }
 
 .board {
-  border: 12px solid gray;
-  background:gray;
+  border: 12px solid #2196f3;
+  background:#2196f3;
   width: 500px;
   height: 500px;
   display: grid;
@@ -21,8 +21,13 @@
 }
 
 .X {
-  color: blue;
+  color: #5e35b1;
 }
 .O {
-  color: lightskyblue;
+  color: #26c6da;
+}
+
+.game {
+  display:flex;
+  justify-content: center
 }
