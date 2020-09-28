@@ -13,6 +13,7 @@ const Game = () => {
   const winner = calculateWinner(board[count]);
   const xo = turn ? "X" : "O";
 
+  //logic for the game to get the X & O
   const onClick = (i) => {
     const boardPoint = board.slice(0, count + 1);
     const current = board[count];
@@ -29,11 +30,12 @@ const Game = () => {
     setTurn(!turn);
   };
 
+  //Get player names
   const setPlayer = (name1, name2) => {
     setPlayers([...players, name1, name2]);
-    // setPlayers([...players, name2])
   };
 
+  //Reset button function
   const resetBoard = () =>{
       setBoard([Array(9).fill(null)])
       setCount(0)
