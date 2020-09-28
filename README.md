@@ -29,9 +29,9 @@ Phase 2
 - [x] Game logic
 
 Phase 3
--[x] Get player name
--[x] Do notifications
--[x] Set up error catching
+- [x] Get player name
+- [x] Do notifications
+- [x] Set up error catching
 
 ## Challenges
 Thinking of how to make this game a N x N game.
